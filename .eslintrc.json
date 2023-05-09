@@ -18,7 +18,17 @@
     "react"
   ],
   "rules": {
-    "react/prop-types": 0
+    "react/prop-types": "warn",
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    "semi": "warn",
+    "object-curly-spacing": [
+      "warn",
+      "always"
+    ],
+    "no-unused-vars": "warn"
   },
   "settings": {
     "react": {
