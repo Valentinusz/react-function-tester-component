@@ -1,81 +1,71 @@
-import { Box, Button, Checkbox, FormLabel, Input } from '@chakra-ui/react';
+import { Button, Checkbox, FormLabel, Input } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
-import { MdAddCircle } from 'react-icons/all.js';
+import { Fragment } from 'react';
 
-export function CustomTestInputGroup({ structureFragment, stateFragment, onInput, parentName }) {
-    const handleInput = (event) => {
-        console.log(parentName);
-        onInput({ [parentName]: { ...stateFragment, [event.target.name]: event.target.value } });
-    };
-
-    const makeInput = (label) => {
-        return (
-            <>
-                <FormLabel>{label}</FormLabel>
-                <Input type='text' name={label} onInput={handleInput} value={stateFragment[label]}></Input>
-            </>
-        );
-    };
-
-    const makeCheckBox = (label) => {
-        return (
-            <>
-                <Checkbox>{label}</Checkbox>
-            </>
-        );
-    };
-
-    function resolveInputType(key, value, structureFrag, stateFrag) {
+function makeInput(structureFragment, stateFragment, field, value) {
+    if (typeof value === 'object') {
         if (Array.isArray(value)) {
-            const inputArray = [];
-            for (const index in stateFrag[key]) {
-                inputArray.push(resolveInputType(index, value[index], structureFrag[key], stateFrag[key]));
+            const arrayInputs = [];
+            for (const index in stateFragment[field]) {
+                arrayInputs.push(
+                    <li key={index}>
+                        <CustomTestInputGroup key={index} structureFragment={structureFragment[field][index]}
+                                              stateFragment={stateFragment[field][index]}
+                        >
+
+                        </CustomTestInputGroup>
+                        <Button key={index + "a"}>delete</Button>
+                    </li>
+                );
             }
             return (
-                <Box>
-                    {inputArray}
-                    <Button><MdAddCircle></MdAddCircle></Button>
-                </Box>
-
-            );
-        } else if (value === 'number' || !isNaN(value)) {
-            return makeInput(key);
-        } else if (value === 'boolean' || typeof value === 'boolean') {
-            return makeCheckBox(key);
-        } else if (value === 'string') {
-            return makeInput(key);
-        } else if (typeof value === 'object') {
+                <Fragment key={field}>
+                    <ol>
+                        {arrayInputs}
+                    </ol>
+                    <Button>Add</Button>
+                </Fragment>);
+        } else {
             return (
-                <Box>
-                    <h1>{key}: Object</h1>
-                    <CustomTestInputGroup structureFragment={value} onInput={handleInput} parentName={key}
-                                           stateFragment={stateFrag[key]}/>
-                </Box>
+                <CustomTestInputGroup key={field} structureFragment={structureFragment[field]}
+                                      stateFragment={stateFragment[field]}/>
             );
         }
-        return null;
+    } else if (value === 'boolean') {
+        return (
+            <Checkbox key={field}>{field}</Checkbox>
+        );
+    } else if (value === 'number') {
+        return (
+            <FormLabel key={field}>{field}
+                <Input variant='flushed'/>
+            </FormLabel>
+        );
+    } else if (value === 'string') {
+        return (
+            <FormLabel key={field}>{field}
+                <Input variant='flushed'/>
+            </FormLabel>
+        );
+    } else {
+        throw new Error('Invalid type in input structure.');
     }
+}
 
-    function makeContent() {
-        const content = [];
+export function CustomTestInputGroup({ structureFragment, stateFragment, onInput, parentName }) {
+    // console.log(stateFragment);
+    // console.log(structureFragment);
 
-        for (const [key, value] of Object.entries(structureFragment)) {
-            content.push(resolveInputType(key, value, structureFragment, stateFragment));
-        }
-        return content;
+    const inputs = [];
+    for (const [field, value] of Object.entries(structureFragment)) {
+        inputs.push(makeInput(structureFragment, stateFragment, field, value));
     }
-
-
-    return (
-        <Box>
-            {makeContent()}
-        </Box>
-    );
+    return inputs;
 }
 
 CustomTestInputGroup.propTypes = {
-    structureFragment: PropTypes.object,
-    stateFragment: PropTypes.object,
+    structureFragment: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    stateFragment: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onInput: PropTypes.func,
     parentName: PropTypes.string
 };
