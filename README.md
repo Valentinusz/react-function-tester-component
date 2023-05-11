@@ -25,18 +25,18 @@ A fegyelmi vétség legsúlyosabb következménye a hallgató elbocsátása az e
 Kérlek, beadás előtt töltsétek ki, hogy mely részfeladatokat oldottátok meg!
 
 ```txt
-[ ] A [kiadott keretprogram](https://github.com/horvathgyozo/react-bead-fuggvenytesztelo-starter-kit) használata (1pt)
-[ ] Legalább 4 komponens (1pt)
+[x] A [kiadott keretprogram](https://github.com/horvathgyozo/react-bead-fuggvenytesztelo-starter-kit) használata (1pt)
+[x] Legalább 4 komponens (1pt)
 
 Függvény
-  [ ] A függvény megjelenítésre kerül (1pt)
+  [x] A függvény megjelenítésre kerül (1pt)
 
 Előre megadott tesztek
-  [ ] Az előre megadott tesztek nevei felsorolásra kerülnek (1pt)
-  [ ] Az előre megadott tesztek egyesével futtathatók, eredményükről vizuális visszajelzést kapunk (1pt)
-  [ ] Az előre megadott tesztek egyszerre is futtathatók, ekkor is megfelelően változnak az egyes tesztek vizuális visszajelzései (1pt)
-  [ ] Egy előre megadott teszt sikeres futtatásánál megjelenítésre kerül a kapott pontszám (1pt)
-  [ ] Az összes előre megadott teszt futtatásánál megjelenik az elért összpontszám (1pt)
+  [x] Az előre megadott tesztek nevei felsorolásra kerülnek (1pt)
+  [x] Az előre megadott tesztek egyesével futtathatók, eredményükről vizuális visszajelzést kapunk (1pt)
+  [x] Az előre megadott tesztek egyszerre is futtathatók, ekkor is megfelelően változnak az egyes tesztek vizuális visszajelzései (1pt)
+  [x] Egy előre megadott teszt sikeres futtatásánál megjelenítésre kerül a kapott pontszám (1pt)
+  [x] Az összes előre megadott teszt futtatásánál megjelenik az elért összpontszám (1pt)
 
 Egyedi tesztek
   [ ] Az egyedi tesztek listája megjelenik, sorszámuk és neveik felsorolásával (1pt)
@@ -44,14 +44,14 @@ Egyedi tesztek
   [ ] Egy egyedi teszt szerkeszthető (1pt)
   [ ] Egy egyedi teszt törölhető (1pt)
   [ ] Egy teszt kiválasztásakor(=szerkesztésekor) megjelennek az `input` paraméterben **legfelső szinten** megadott szerkezetleírásnak megfelelő mezők. (1pt)
-  [ ] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **szöveg** típus megfelelően jelenik meg (1pt)
-  [ ] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **szám** típus megfelelően jelenik meg (1pt)
-  [ ] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **logikai** típus megfelelően jelenik meg (1pt)
-  [ ] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **tömb** típus megfelelően jelenik meg, lehetőség van új elemeket hozzáadni, meglévőeket szerkeszteni, törölni (3pt)
-  [ ] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **objektum** típus megfelelően jelenik meg, látszanak az objektum mezőnevei, amelyek típusuknak megfelelően szerkeszthetők (3pt)
+  [x] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **szöveg** típus megfelelően jelenik meg (1pt)
+  [x] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **szám** típus megfelelően jelenik meg (1pt)
+  [x] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **logikai** típus megfelelően jelenik meg (1pt)
+  [x] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **tömb** típus megfelelően jelenik meg, lehetőség van új elemeket hozzáadni, meglévőeket szerkeszteni, törölni (3pt)
+  [x] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **objektum** típus megfelelően jelenik meg, látszanak az objektum mezőnevei, amelyek típusuknak megfelelően szerkeszthetők (3pt)
   [ ] A megjelenített űrlapmezők kitöltöttsége ellenőrzésre kerül, a hibák listában kiíródnak (1pt)
   [ ] A hibalista egy elemére kattintva a fólusz a megfelelő elemre ugrik (1pt)
-  [ ] **Tetszőleges** `input` struktúra megjelenítésre kerül rekurzívan (+5pt)
+  [x] **Tetszőleges** `input` struktúra megjelenítésre kerül rekurzívan (+5pt)
   [ ] Az egyedi tesztek egyesével futtathatók, eredményükről vizuális visszajelzést kapunk (1pt)
   [ ] Az egyedi tesztek egyszerre is futtathatók, ekkor is megfelelően változnak az egyes tesztek vizuális visszajelzései (1pt)
 

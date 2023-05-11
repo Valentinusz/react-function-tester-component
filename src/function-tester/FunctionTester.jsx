@@ -2,7 +2,7 @@ import { Function } from './Function.jsx';
 import PropTypes from 'prop-types';
 import Tests from './Tests.jsx';
 import { Box, Button, Heading } from '@chakra-ui/react';
-import CustomTests from './CustomTests.jsx';
+import CustomTests from './custom/CustomTests.jsx';
 
 export function FunctionTester({ fn, input, output, tests, onFinish }) {
     console.log(fn);

@@ -1,7 +1,7 @@
 import { Button, ButtonGroup, Td, Tr } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { MdDelete, MdEdit, MdPlayArrow } from 'react-icons/md';
-import { TestStatusIndicator } from './TestStatusIndicator.jsx';
+import { TestStatusIndicator } from '../TestStatusIndicator.jsx';
 
 export function CustomTestCase({ testCase, status, onRun, index }) {
     return (

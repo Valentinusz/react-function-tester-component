@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Box, Button, Table, Tbody, Td, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
 import { useState } from 'react';
 import { MdPlayArrow } from 'react-icons/md';
-import { CustomTestForm } from './CustomTestForm';
+import { CustomTestForm } from './CustomTestForm.jsx';
 
 export default function CustomTests({ fn, input }) {
     const [tests, setTests] = useState([]);
