@@ -9,23 +9,14 @@ export function FunctionTester({ fn, input, output, tests, onFinish }) {
     console.log(input);
     console.log(output);
     console.log(tests);
+
     return (
         <Box>
             <Heading>FunctionTester</Heading>
             <Function fn={fn}></Function>
+            <Heading>Predefined cases</Heading>
             <Tests tests={tests} fn={fn}></Tests>
-            <CustomTests fn={fn} input={input}></CustomTests>
-            <Button
-                onClick={() =>
-                    onFinish({
-                        givenTests: [],
-                        testResult: { achieved: 100, all: 100 },
-                        customTests: [],
-                    })
-                }
-            >
-                OK
-            </Button>
+            <CustomTests fn={fn} input={input} output={output}></CustomTests>
         </Box>
     );
 }
@@ -33,7 +24,7 @@ export function FunctionTester({ fn, input, output, tests, onFinish }) {
 FunctionTester.propTypes = {
     fn: PropTypes.func,
     input: PropTypes.object,
-    output: PropTypes.string,
+    output: PropTypes.any,
     tests: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string,
         testFn: PropTypes.func,

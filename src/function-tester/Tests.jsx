@@ -9,7 +9,7 @@ export default function Tests({ tests, fn }) {
 
     const updateStatus = (testCaseIndex) => {
         const newStatus = [...status];
-        newStatus[testCaseIndex]['result'] = tests[testCaseIndex].testFn(fn);
+        newStatus[testCaseIndex].result = tests[testCaseIndex].testFn(fn);
         setStatus(newStatus);
     };
 
@@ -19,7 +19,9 @@ export default function Tests({ tests, fn }) {
         }
     };
 
-    const passed = tests.filter((test, index) => status[index]['result']);
+    const passed = tests.filter((test, index) => status[index].result);
+
+    /** @type {number} */
     const points = passed.reduce((acc, curr) => acc + curr.points, 0);
 
     return (

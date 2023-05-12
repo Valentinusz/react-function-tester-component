@@ -39,11 +39,11 @@ Előre megadott tesztek
   [x] Az összes előre megadott teszt futtatásánál megjelenik az elért összpontszám (1pt)
 
 Egyedi tesztek
-  [ ] Az egyedi tesztek listája megjelenik, sorszámuk és neveik felsorolásával (1pt)
-  [ ] Új egyedi teszt hozzáadása lehetséges (1pt)
-  [ ] Egy egyedi teszt szerkeszthető (1pt)
-  [ ] Egy egyedi teszt törölhető (1pt)
-  [ ] Egy teszt kiválasztásakor(=szerkesztésekor) megjelennek az `input` paraméterben **legfelső szinten** megadott szerkezetleírásnak megfelelő mezők. (1pt)
+  [x] Az egyedi tesztek listája megjelenik, sorszámuk és neveik felsorolásával (1pt)
+  [x] Új egyedi teszt hozzáadása lehetséges (1pt)
+  [x] Egy egyedi teszt szerkeszthető (1pt)
+  [x] Egy egyedi teszt törölhető (1pt)
+  [x] Egy teszt kiválasztásakor(=szerkesztésekor) megjelennek az `input` paraméterben **legfelső szinten** megadott szerkezetleírásnak megfelelő mezők. (1pt)
   [x] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **szöveg** típus megfelelően jelenik meg (1pt)
   [x] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **szám** típus megfelelően jelenik meg (1pt)
   [x] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **logikai** típus megfelelően jelenik meg (1pt)
@@ -52,14 +52,14 @@ Egyedi tesztek
   [ ] A megjelenített űrlapmezők kitöltöttsége ellenőrzésre kerül, a hibák listában kiíródnak (1pt)
   [ ] A hibalista egy elemére kattintva a fólusz a megfelelő elemre ugrik (1pt)
   [x] **Tetszőleges** `input` struktúra megjelenítésre kerül rekurzívan (+5pt)
-  [ ] Az egyedi tesztek egyesével futtathatók, eredményükről vizuális visszajelzést kapunk (1pt)
-  [ ] Az egyedi tesztek egyszerre is futtathatók, ekkor is megfelelően változnak az egyes tesztek vizuális visszajelzései (1pt)
+  [x] Az egyedi tesztek egyesével futtathatók, eredményükről vizuális visszajelzést kapunk (1pt)
+  [x] Az egyedi tesztek egyszerre is futtathatók, ekkor is megfelelően változnak az egyes tesztek vizuális visszajelzései (1pt)
 
 "OK" gomb
   [ ] Az "OK" gomb helyes működése (1pt)
 
-[ ] Felhasználóbarát működés (1pt)
-[ ] Igényes megjelenés (2pt)
+[x] Felhasználóbarát működés (1pt)
+[x] Igényes megjelenés (2pt)
 [ ] 1 hét késés (-3pt)
 [ ] 2 hét késés (-6pt)
 ```
