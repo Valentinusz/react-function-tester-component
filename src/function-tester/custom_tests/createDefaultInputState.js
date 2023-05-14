@@ -1,7 +1,7 @@
 /**
  * Creates a default object with empty content based on the supplied object.
- * @param object where every primitive field is replaced with the empty string
- * @return {{}}
+ * @param object where every primitive field is replaced with the empty string.
+ * @return {Object}
  */
 export function createDefaultInputState(object) {
     const newObj = {};
@@ -26,14 +26,19 @@ export function createDefaultInputState(object) {
     return newObj;
 }
 
-export function createDefaultOutPutState(variable) {
+/**
+ * Creates a default output state.
+ * @param variable
+ * @return {{}|([(*|{}|boolean|string)]|{}|boolean|string)[]|string|boolean} 😳
+ */
+export function createDefaultOutputState(variable) {
     if (typeof variable === 'object') {
         if (Array.isArray(variable)) {
-            return [createDefaultOutPutState(variable[0])];
+            return [createDefaultOutputState(variable[0])];
         } else {
             const newObj = {};
             for (let field in variable) {
-                newObj[field] = createDefaultOutPutState(variable[field]);
+                newObj[field] = createDefaultOutputState(variable[field]);
             }
             return newObj;
         }
@@ -45,5 +50,4 @@ export function createDefaultOutPutState(variable) {
             return '';
         }
     }
-
 }
