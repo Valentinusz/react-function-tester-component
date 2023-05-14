@@ -1,43 +1,31 @@
 import { Function } from './Function.jsx';
-import PropTypes from 'prop-types';
-import Tests from './Tests.jsx';
-import { Box, Button, Heading } from '@chakra-ui/react';
-import CustomTests from './CustomTests.jsx';
+import PredefinedTests from './predefined_tests/PredefinedTests.jsx';
+import CustomTests from './custom_tests/CustomTests.jsx';
+import { Container, Typography } from '@mui/material';
 
+/**
+ * Component for testing the result of JS functions.
+ * @param fn {!Function} function to test.
+ * @param input {!Object} object representing the parameter list of the function.
+ * @param output {any} output of the function.
+ * @param tests {[{name: string, testFn: Function, points: number}]} array containing the predefined_tests test cases.
+ * @param onFinish {!Function} function to run on pressing the "OK" button.
+ * @return {JSX.Element}
+ * @constructor
+ */
 export function FunctionTester({ fn, input, output, tests, onFinish }) {
     console.log(fn);
     console.log(input);
     console.log(output);
     console.log(tests);
+
     return (
-        <Box>
-            <Heading>FunctionTester</Heading>
+        <Container>
+            <Typography variant="h1" mb={4}>FunctionTester</Typography>
             <Function fn={fn}></Function>
-            <Tests tests={tests} fn={fn}></Tests>
-            <CustomTests fn={fn} input={input}></CustomTests>
-            <Button
-                onClick={() =>
-                    onFinish({
-                        givenTests: [],
-                        testResult: { achieved: 100, all: 100 },
-                        customTests: [],
-                    })
-                }
-            >
-                OK
-            </Button>
-        </Box>
+            <PredefinedTests tests={tests} fn={fn}></PredefinedTests>
+            <CustomTests fn={fn} input={input} output={output}></CustomTests>
+        </Container>
     );
 }
 
-FunctionTester.propTypes = {
-    fn: PropTypes.func,
-    input: PropTypes.object,
-    output: PropTypes.string,
-    tests: PropTypes.arrayOf(PropTypes.shape({
-        name: PropTypes.string,
-        testFn: PropTypes.func,
-        points: PropTypes.number
-    })),
-    onFinish: PropTypes.func
-};

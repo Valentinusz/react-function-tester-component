@@ -9,5 +9,8 @@ const config = {
   docs: {
     autodocs: "tag",
   },
+  features: {
+    emotionAlias: false
+  }
 };
 export default config;

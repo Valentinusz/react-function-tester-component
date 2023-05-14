@@ -1,14 +1,18 @@
-import PropTypes from 'prop-types';
-import { Code } from '@chakra-ui/react';
+import { Typography } from '@mui/material';
 
+/**
+ * Component displaying a JS function.
+ * @param fn {!Function} function to display.
+ * @return {JSX.Element}
+ * @constructor
+ */
 export function Function({ fn }) {
     return (
-        <Code>
-            {fn.toString()}
-        </Code>
+        <Typography>
+            <code>
+                {fn.toString()}
+            </code>
+        </Typography>
+
     );
 }
-
-Function.propTypes = {
-    fn: PropTypes.func
-};
